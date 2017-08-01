@@ -1,0 +1,29 @@
+doctype html
+html(lang="en")
+	head
+		title='Document Transformer'
+		link(rel='stylesheet', href='/bootstrap/css/bootstrap.min.css')
+		link(rel='stylesheet', href='/css/style.css')
+	body
+		nav(class='navbar navbar-inverse navbar-fixed-top')
+			div(class='container-fluid')
+				div(class='navbar-header')
+					a(class='navbar-brand' href='/')
+						span(class='glyphicon glyphicon-transfer' style='margin-right: 10px;')
+						|Document Transformer
+
+		div(class='container-fluid')
+			div(class='row')
+				div(class='col-sm-3 col-md-2 sidebar')
+					h4 reddit.com
+					ul(class='nav nav-sidebar' id='reportSelector')
+						li(data-report-id='brief')
+							a(href='javascript:void(0);') Brief report
+						li(data-report-id='overview')
+							a(href='javascript:void(0);') Overview report
+
+				div(class='col-sm-9 col-sm-offset-3 col-md-10 col-md-offset-2 main')
+					block content
+
+		script(src='/assets/main.bundle.js')
+		script(src='/bootstrap/js/bootstrap.min.js')

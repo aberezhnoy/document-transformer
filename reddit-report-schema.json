@@ -1,0 +1,13 @@
+{
+    "properties": {
+        "data": {
+            "required": true,
+
+            "properties": {
+                "children": {
+                    "required": true
+                }
+            }
+        }
+    }
+}

@@ -1,0 +1,77 @@
+extends layout
+
+block content
+	div(class='panel panel-default' id='outputConfig')
+		div(class='panel-heading')
+			h3(class='panel-title') Output configuration
+		div(class='panel-body')
+			div(class='row')
+				div(class='col-md-6 output-csv-config')
+					h5 CSV Format
+					div
+						div(class='checkbox')
+							label
+								input(type='checkbox' class='csv-enabled' id='outputFormatCSV_Enabled')
+								|Enabled
+
+					div(class='form-group')
+						label(for='outputFormatCSV_Separator') Separator:
+						input(type='text' class='form-control csv-separator' id='outputFormatCSV_Separator')
+
+				div(class='col-md-6 output-sql-config')
+					h5 SQL Format
+					div
+						div(class='checkbox')
+							label
+								input(type='checkbox' class='sql-enabled' id='outputFormatSQL_Enabled')
+								|Enabled
+
+					div(class='form-group')
+						label(for='outputFormatSQL_TableName') Table Name:
+						input(type='text' class='form-control sql-table-name' id='outputFormatSQL_TableName')
+
+	div(id='redditReports' class='reports')
+		div(id='redditBriefReport' data-report-id='brief' class='report')
+			div
+				span(style='margin-right: 10px;') Sort By
+
+				select(class='reddit-sort-field' style='margin-right: 10px;')
+					option(value='title') Title
+					option(value='id') ID
+					option(value='created') Created
+					option(value='score') Score
+
+				select(class='reddit-sort-order')
+					option(value='asc') Ascendant
+					option(value='desc') Descendant
+
+			div(style='text-align: right;')
+				a(class='btn btn-primary perform-report' role='button' href='javascript:void(0);')
+					|Perform Brief Report
+					span(class='glyphicon glyphicon-play' style='margin-left: 5px;')
+
+			div(class='download-links hidden')
+				h5 Last Results
+				div(class='content')
+
+		div(id='redditOverviewReport' data-report-id='overview' class='report')
+			div
+				span(style='margin-right: 10px;') Sort By
+
+				select(class='reddit-sort-field' style='margin-right: 10px;')
+					option(value='domain') Domain
+					option(value='articlesCount') Articles
+					option(value='scoreSum') Score Sum
+
+				select(class='reddit-sort-order')
+					option(value='asc') Ascendant
+					option(value='desc') Descendant
+
+			div(style='text-align: right;')
+				a(class='btn btn-primary perform-report' role='button' href='javascript:void(0);')
+					|Perform Overview Report
+					span(class='glyphicon glyphicon-play' style='margin-left: 5px;')
+
+			div(class='download-links hidden')
+				h5 Last Results
+				div(class='content')
